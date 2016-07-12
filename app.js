@@ -10,27 +10,31 @@ console.log('tictactoe');
 //   diagonal1 : ['box1', 'box5', 'box9'],
 //   diagonal2 : ['box3', 'box5', 'box7'],
 // }
-var column2 = ['box2', 'box5', 'box8'];
-//try to make it 2 players
-var player1 = true;
-var opp2;
-//if player 1 is true, its their turn and an X on click, then chang eit to x false
 var player = [];
 var opp = [];
 var turn = true;
-
 var $cards = $('.card');
 var $board = $('#wrapper');
-
+// CLICK FOR X'S
 $cards.on('click', function(event){
+  if (turn === true) {
   var $cardClickedId = event.target.id;
   var $cardClicked = $(event.target);
   // debugger
   $cardClicked.append("<img id='xImg' src='images/ximg.png'>");//not working
   console.log($cardClickedId);
   player.push($cardClickedId);
+  turn = !turn;
+} else if (turn === false){
+    var $cardClickedId = event.target.id;
+    var $cardClicked = $(event.target);
+    $cardClicked.append("<img id='xImg' src='images/oppimg.png'>");//not working
+    console.log($cardClickedId);
+    opp.push($cardClickedId);
+    turn = true;
+  }
 });
-
+//if opp.length and/or player.length => 3, then call didIWin
 var didIWin = [['box4', 'box5', 'box6'], ['box1', 'box2', 'box3'], ['box7', 'box8', 'box9']];
 function winner(player) {
   var playerString = player.toString();
