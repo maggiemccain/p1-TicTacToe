@@ -1,0 +1,17 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+}
+#wrapper {
+  background-color: gray;
+  width: 100%;
+}
+
+#wrapper > * {
+  background-color: red;
+  width: 30%;
+  height: 60px;
+  float: left;
+  border: 2px solid black;
+  margin: 5px;
+}
