@@ -1,17 +1,142 @@
 body {
   margin: 0 auto;
   text-align: center;
-}
-#wrapper {
-  background-color: gray;
-  width: 100%;
+  box-sizing: border-box;
+  width:100%;
 }
 
-#wrapper > * {
+#wrapper {
+  background-color: gray;
+  width: 60%;
+  margin: 0 auto;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+}
+.card {
   background-color: red;
-  width: 30%;
-  height: 60px;
+  width: 22%;
+  height: 100px;
   float: left;
   border: 2px solid black;
-  margin: 5px;
+  margin: 3% 5%;
+  border-radius: 20%;
+}
+.firstPlayerCat {
+  background-image: url('images/cat1.jpg');
+  background: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.oppDog {
+  background-image: url('images/dogdivimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.playerCat {
+  background-image: url('images/bigeyedcat.jpg');
+  background-size: cover;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+  clear: both;;
+  width: 30%;
+  height: 30%;
+}
+.playerDog {
+  background-image: url('images/puppyeyes.jpg');
+  background-size: cover;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  clear: both;
+  width: 30%;
+  height: 30%;
+}
+#playerImages {
+  width: 75%;
+}
+.currentPlayer {
+  transition: 1s;
+  /*background-color: black !important;*/
+  border: 5px solid teal !important;
+}
+
+@media (min-width: 50em) {
+body {
+background: #D1DDEB;
+}
+#wrapper {
+  margin-top: 20px;
+  background: #D1DDEB;
+  height: 90%;
+  width: 60%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+h1 {
+  padding: 15px;
+  font-size: 3em;
+}
+.playerCat {
+  background-image: url('images/bigeyedcat.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  position: absolute;
+  border: 2px  solid gray;
+  top: 150px;
+  clear: both;
+  width: 35%;
+  height: 30%;
+  margin-bottom: 20%;
+}
+.playerDog {
+  background-image: url('images/puppyeyes.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  border: 2px  solid gray;
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  clear: both;
+  width: 35%;
+  height: 30%;
+}
+.card {
+  background-color: #55698C;
+  width: 25%;
+  height: 120px;
+  float: right;
+  border: 2px solid black;
+  margin: 2% 2%;
+  border-radius: 20%;
+}
+h1 {
+  text-align: left;
+}
+#resetBtn {
+  /*position: absolute;*/
+  margin: 0 auto;
+  bottom: 100px;
+  right: 200px;
+  width: 20%;
+  height: 10%;
+  border-radius: 20px;
+  border: 2px solid #43526E;
+  background-color: #61778A;
+  font-size: 2em;
+  font-family: 'Oswald', sans-serif;
+}
+.currentPlayer {
+  transition: 1s;
+  /*background-color: black !important;*/
+  border: 10px solid #4A4CE8 !important;
+}
 }

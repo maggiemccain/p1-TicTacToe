@@ -1,15 +1,8 @@
-console.log('tictactoe');
-
+console.log('second attempt');
 var $resetBtn = $('#resetBtn');
-var player = [];
-var opp = [];
 var turn = true; //cat turn
 var $cards = $('.card');
 var $currentPlayer = $('#currentPlayer');
-// var $board = $('#wrapper');
-var didIWin = [['box4', 'box5', 'box6'], ['box1', 'box2', 'box3'], ['box7', 'box8', 'box9'],
-  ['box1', 'box4', 'box7'], ['box2', 'box5', 'box8'],['box3', 'box6', 'box9'],
-  ['box1', 'box5', 'box9'], ['box3', 'box5', 'box7']];
 
 function reset() {
   $('.card').removeClass('firstPlayerCat');
@@ -21,63 +14,27 @@ function reset() {
   opp = [];
 }
 
-function winner(competitor) {
-  var competitorString = competitor.toString();
-  for (var i = 0; i < didIWin.length; i++) {
-    var didIWinString = didIWin[i].toString();
-    if (competitorString == didIWinString) {
-      console.log ('you win');
-      if(competitor == player) {
-        alert('cats rule, dogs drool!');
-        // reset();
-      } else {
-        alert('dogs rule, cats drool!');
-        // reset();
-      }
-      };
-    }
-  }
-
-function testForWin(competitor) {
-  if (competitor.length >= 3) {
-    winner(competitor);
-  }
-}
-
 $cards.on('click', function(event){
-  if (turn === true) { //add css so you know who's turn it is
+  if (turn === true) {
     var $cardClickedId = event.target.id;
     var $cardClicked = $(event.target);
-    // debugger
     $cardClicked.addClass('firstPlayerCat');
-    // debugger
-    player.push($cardClickedId);
     checkWinner();
-    // testForWin(player);
     turn = !turn;
-    setTimeout(function(){ //how would toggling make this easier?
-      // var $catDiv = $('.playerCat')
-      // var $dogDiv = $('.playerDog');
+    setTimeout(function(){
       $('.playerDog').addClass('currentPlayer');
       $('.playerCat').removeClass('currentPlayer');
-    }, 500);
-    //add images to denote opp is going
-} else if (turn === false){
-    var $cardClickedId = event.target.id;
-    var $cardClicked = $(event.target);
-    $cardClicked.addClass('oppDog');
-    console.log($cardClickedId);
-    opp.push($cardClickedId);
-    checkWinner();
-    // testForWin(opp)
-    turn = true;
-    setTimeout(function(){
-      // var $catDiv = $('.playerCat')
-      // var $dogDiv = $('.playerDog');
-      $('.playerDog').removeClass('currentPlayer');
-      $('.playerCat').addClass('currentPlayer');
-    }, 500);
-    //add graphic to denote player is going
+    }, 200);
+  } else if (turn === false){
+      var $cardClickedId = event.target.id;
+      var $cardClicked = $(event.target);
+      $cardClicked.addClass('oppDog');
+      checkWinner();
+      turn = true;
+      setTimeout(function(){
+        $('.playerDog').removeClass('currentPlayer');
+        $('.playerCat').addClass('currentPlayer');
+      }, 200);
   }
 })
 
