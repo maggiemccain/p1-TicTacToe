@@ -1,142 +1,183 @@
-body {
-  margin: 0 auto;
-  text-align: center;
+* {
   box-sizing: border-box;
-  width:100%;
-}
-
-#wrapper {
-  background-color: gray;
-  width: 60%;
-  margin: 0 auto;
-}
-h1 {
+  background-color: #D1DDEB;
   font-family: 'Oswald', sans-serif;
 }
-.card {
-  background-color: red;
-  width: 22%;
-  height: 100px;
-  float: left;
-  border: 2px solid black;
-  margin: 3% 5%;
-  border-radius: 20%;
+
+#window {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  min-width: 700px;
 }
+
+/*#window > * {
+  vertical-align: top;
+}*/
+#sidebar {
+  margin-top:5px;
+  width: 35%;
+  height: 100%;
+  float: left;
+}
+
+#gameScreen {
+  margin-top: 5px;
+  width: 54%;
+  float: right;
+  min-width: 400px;
+}
+
+#gameboard {
+  background: #D1DDEB;
+  float: right;
+  width: 400px;
+  margin-right: 20px;
+}
+
+.card {
+  background-color: #0B04AD;
+  float: right;
+  border: 2px solid #D1DDEB;
+  width: 130px;
+  height: 130px;
+}
+
+#controlPanel {
+  width: 100%;
+  margin: 0 auto;
+  float: right;
+}
+
+#controlPanel > * {
+  display: inline-block;
+  opacity: .75;
+}
+
 .firstPlayerCat {
-  background-image: url('images/cat1.jpg');
+  background-image: url('images/xs.jpg');
   background: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-.oppDog {
-  background-image: url('images/dogdivimg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.playerCat {
-  background-image: url('images/bigeyedcat.jpg');
-  background-size: cover;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 0px;
-  clear: both;;
-  width: 30%;
-  height: 30%;
-}
-.playerDog {
-  background-image: url('images/puppyeyes.jpg');
-  background-size: cover;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  clear: both;
-  width: 30%;
-  height: 30%;
-}
-#playerImages {
-  width: 75%;
-}
-.currentPlayer {
-  transition: 1s;
-  /*background-color: black !important;*/
-  border: 5px solid teal !important;
+  background-color: white;
 }
 
-@media (min-width: 50em) {
-body {
-background: #D1DDEB;
+.oppDog {
+  background-image: url('images/os.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
 }
-#wrapper {
-  margin-top: 20px;
-  background: #D1DDEB;
-  height: 90%;
-  width: 60%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
+
+.playerDog img {
+  width: 100%;
 }
+
+.playerCat img {
+  width: 100%;
+}
+
+.playerDog, .playerCat {
+  width: 80%;
+}
+
+.currentPlayer {
+  transition: .5s;
+  border: 10px solid #D900BE !important;
+}
+
 h1 {
-  padding: 15px;
   font-size: 3em;
-}
-.playerCat {
-  background-image: url('images/bigeyedcat.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  position: absolute;
-  border: 2px  solid gray;
-  top: 150px;
-  clear: both;
-  width: 35%;
-  height: 30%;
-  margin-bottom: 20%;
-}
-.playerDog {
-  background-image: url('images/puppyeyes.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  border: 2px  solid gray;
-  position: absolute;
-  bottom: 10px;
-  left: 0px;
-  clear: both;
-  width: 35%;
-  height: 30%;
-}
-.card {
-  background-color: #55698C;
-  width: 25%;
-  height: 120px;
-  float: right;
-  border: 2px solid black;
-  margin: 2% 2%;
-  border-radius: 20%;
-}
-h1 {
   text-align: left;
+  margin:5px;
 }
-#resetBtn {
-  /*position: absolute;*/
-  margin: 0 auto;
-  bottom: 100px;
-  right: 200px;
-  width: 20%;
+
+#resetBtn, #catScore, #dogScore {
+  display: inline-block;
+  width: 30%;
   height: 10%;
+  margin: 1%;
   border-radius: 20px;
   border: 2px solid #43526E;
-  background-color: #61778A;
+  background-color: #0BBCAD;
   font-size: 2em;
-  font-family: 'Oswald', sans-serif;
 }
-.currentPlayer {
-  transition: 1s;
-  /*background-color: black !important;*/
-  border: 10px solid #4A4CE8 !important;
+
+#resetBtn:hover {
+  background: #FF00D0;
+}
+
+#dogNum, #catNum {
+  background-color: #0BBCAD;
+}
+
+#winnerMsg {
+  display: none;
+}
+
+.card:hover {
+  opacity: .5;
+}
+
+@media (min-width: 1300px) {
+
+  #gameboard {
+    width: 600px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 900px){
+
+#window {
+  width: 70%;
+}
+h1 {
+  margin: 5px;
+}
+
+#gameboard {
+  width: 480px;
+}
+
+.card {
+  width: 157px;
+  height: 157px;
+}
+}
+
+@media (max-width: 500px){
+
+.playerDog, .playerCat {
+  display: none;
+  }
+
+#window {
+  width: 100%;
+}
+
+h1 {
+  float: left;
+  font-size: 1em;
+}
+
+#sidebar, #gameScreen {
+  width: 100%;
+  float: left;
+}
+
+#gameboard {
+  float: left;
+  width: 305px;
+}
+
+.card {
+  width: 100px;
+  height: 130px;
 }
 }
