@@ -11,36 +11,45 @@
   min-width: 700px;
 }
 
-/*#window > * {
-  vertical-align: top;
-}*/
 #sidebar {
   margin-top:5px;
-  width: 35%;
+  width: 25%;
   height: 100%;
   float: left;
 }
 
 #gameScreen {
   margin-top: 5px;
-  width: 54%;
+  width: 74%;
   float: right;
-  min-width: 400px;
 }
 
 #gameboard {
   background: #D1DDEB;
   float: right;
-  width: 400px;
+  width: 95%;
   margin-right: 20px;
+}
+
+#catWin, #dogWin, #tie {
+  display: none;
+  font-size: 5em;
+}
+
+p {
+  margin:0;
+}
+
+#dogWin img {
+  width: 50%;
 }
 
 .card {
   background-color: #0B04AD;
   float: right;
   border: 2px solid #D1DDEB;
-  width: 130px;
-  height: 130px;
+  width: 33%;
+  height: 20vw;
 }
 
 #controlPanel {
@@ -112,42 +121,17 @@ h1 {
   background-color: #0BBCAD;
 }
 
-#winnerMsg {
-  display: none;
-}
-
 .card:hover {
   opacity: .5;
 }
 
-@media (min-width: 1300px) {
-
-  #gameboard {
-    width: 600px;
-  }
-
-  .card {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media (min-width: 900px){
+@media (min-width: 1000px) {
 
 #window {
   width: 70%;
 }
-h1 {
-  margin: 5px;
-}
-
-#gameboard {
-  width: 480px;
-}
-
 .card {
-  width: 157px;
-  height: 157px;
+  height: 15vw;
 }
 }
 
@@ -159,11 +143,6 @@ h1 {
 
 #window {
   width: 100%;
-}
-
-h1 {
-  float: left;
-  font-size: 1em;
 }
 
 #sidebar, #gameScreen {
@@ -179,5 +158,13 @@ h1 {
 .card {
   width: 100px;
   height: 130px;
+}
+
+#resetBtn, #catScore, #dogScore {
+  border-radius: 0px;
+}
+
+#catWin, #dogWin, #tie {
+  float:left;
 }
 }
